@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+        <RelativeLayout
+            android:id="@+id/app_bar"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            <ImageView
+                android:id="@+id/img_location"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_marginLeft="@dimen/inner_margin_normal"
+                android:textColor="@color/textColorSecondary"
+                android:text="@string/location"
+                android:layout_toRightOf="@id/img_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Spinner
+                android:id="@+id/spinner"
+                style="@style/mySpinnerItemStyle"
+                android:entries="@array/spinner_array"
+                android:layout_below="@id/tv_location"
+                android:layout_toRightOf="@id/img_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                android:layout_alignParentRight="true"
+                android:layout_width="@dimen/translationX"
+                android:layout_height="@dimen/translationX">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/purple"
+                    android:layout_gravity="top|right"/>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_image_icon"
+                app:cardCornerRadius="@dimen/text_margin"
+                android:layout_width="@dimen/image_icon_size"
+                android:layout_height="@dimen/image_icon_size">
+            <android.support.v7.widget.AppCompatImageView
+                android:src="@drawable/profile_image"
+                android:scaleType="centerCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            </android.support.v7.widget.CardView>
+
+
+            </RelativeLayout>
+
+
+            <!--<android.support.design.widget.FloatingActionButton-->
+                <!--android:id="@+id/fab"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@drawable/profile_image"-->
+                <!--android:layout_height="@dimen/image_icon_size"-->
+                <!--android:layout_width="@dimen/image_icon_size" />-->
+
+        </RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/home_tab_layout"
+        android:layout_below="@+id/app_bar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        app:tabTextColor="@color/textColorSecondary"
+        app:tabSelectedTextColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/home_view_pager"
+        android:layout_below="@+id/home_tab_layout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
